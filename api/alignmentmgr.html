@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ssw.alignmentmgr &mdash; ssw-py 1.0.0a2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ssw.alignment" href="alignment.html" />
+    <link rel="prev" title="API Documentation" href="index.html" />
+</head>
+
+<body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+          <a href="../index.html" class="icon icon-home">
+            ssw-py
+          </a>
+              <div class="version">
+                1.0.0a2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ssw.alignmentmgr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.align"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.align()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.build_dna_score_matrix"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.build_dna_score_matrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.match_score"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.match_score</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.mismatch_penalty"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.mismatch_penalty</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.printResult"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.printResult()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.print_result"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.print_result()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.setRead"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.setRead()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.setReference"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.setReference()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.set_read"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.set_read()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.set_reference"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.set_reference()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ssw.alignmentmgr.force_align"><code class="docutils literal notranslate"><span class="pre">force_align()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ssw.alignmentmgr.format_force_align"><code class="docutils literal notranslate"><span class="pre">format_force_align()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignment.html">ssw.alignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignment.html#ssw.alignment.Alignment"><code class="docutils literal notranslate"><span class="pre">Alignment</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="printer.html">ssw.printer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="printer.html#ssw.printer.printer"><code class="docutils literal notranslate"><span class="pre">printer()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changes_link.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ssw-py</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API Documentation</a></li>
+      <li class="breadcrumb-item active">ssw.alignmentmgr</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/alignmentmgr.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+
+  <span class="target" id="module-ssw.alignmentmgr"></span><section id="ssw-alignmentmgr">
+<h1>ssw.alignmentmgr<a class="headerlink" href="#ssw-alignmentmgr" title="Permalink to this heading"></a></h1>
+<p>Alignment Manager Cython wrapper for ssw library code.</p>
+<p>NOTE: See this link for a info on the CIGAR format:
+<a class="reference external" href="http://genome.sph.umich.edu/wiki/SAM#What_is_a_CIGAR.3F">What is a CIGAR?</a></p>
+<p>Refer to
+<a class="reference external" href="https://en.wikipedia.org/wiki/Smith–Waterman_algorithm">Wiki Smith–Waterman_algorithm</a>
+to understand Smith-Waterman scoring</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ssw.alignmentmgr.</span></span><span class="sig-name descname"><span class="pre">AlignmentMgr</span></span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr" title="Permalink to this definition"></a></dt>
+<dd><p>Class to manage SSW-based alignment</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.align">
+<span class="sig-name descname"><span class="pre">align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gap_open</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gap_extension</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.align" title="Permalink to this definition"></a></dt>
+<dd><p>Align a read to the reference with optional index offseting</p>
+<p>Returns a dictionary no matter what as <cite>align_c</cite> can’t return <code class="docutils literal notranslate"><span class="pre">NULL</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gap_open</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Penalty for <code class="docutils literal notranslate"><span class="pre">gap_open</span></code>. default 3</p></li>
+<li><p><strong>gap_extension</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Penalty for <code class="docutils literal notranslate"><span class="pre">gap_extension</span></code>. default 1</p></li>
+<li><p><strong>start_idx</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Index to start search. Default 0</p></li>
+<li><p><strong>end_idx</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Index to end search (trying to avoid a
+target region). Default 0 means use whole reference length</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="alignment.html#ssw.alignment.Alignment" title="ssw.alignment.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Alignment</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>Alignment with keys <code class="docutils literal notranslate"><span class="pre">CIGAR</span></code>           &lt;for depicting alignment&gt;</dt><dd><p><code class="docutils literal notranslate"><span class="pre">optimal_score</span></code>
+<code class="docutils literal notranslate"><span class="pre">sub-optimal_score</span></code>
+<code class="docutils literal notranslate"><span class="pre">reference_start</span></code> &lt;index into reference&gt;
+<code class="docutils literal notranslate"><span class="pre">reference_end</span></code>   &lt;index into reference&gt;
+<code class="docutils literal notranslate"><span class="pre">read_start`</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&lt;index</span> <span class="pre">into</span> <span class="pre">read&gt;</span>
+<span class="pre">``read_end</span></code>        &lt;index into read&gt;</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – Negative indexing not supported</p></li>
+<li><p><strong>ValueError</strong> – <code class="docutils literal notranslate"><span class="pre">start_idx</span></code> or <code class="docutils literal notranslate"><span class="pre">end_idx</span></code> error</p></li>
+<li><p><strong>ValueError</strong> – Call <a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.set_reference" title="ssw.alignmentmgr.AlignmentMgr.set_reference"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_reference()</span></code></a> first</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.build_dna_score_matrix">
+<span class="sig-name descname"><span class="pre">build_dna_score_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.build_dna_score_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Mismatch_penalty should be positive</p>
+<p>The score matrix looks like:</p>
+<blockquote>
+<div><p>A,  C,  G,  T,  N</p>
+</div></blockquote>
+<dl>
+<dt>score_matrix  = {   2, -2, -2, -2,  0, // A</dt><dd><blockquote>
+<div><p>-2,  2, -2, -2,  0, // C
+-2, -2,  2, -2,  0, // G
+-2, -2, -2,  2,  0, // T</p>
+<blockquote>
+<div><p>0,  0,  0,  0,  0  // N</p>
+</div></blockquote>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>Hard coded to a 5 x 5 matrix so this should not be called externally
+as of now</p>
+<dl class="simple">
+<dt>Uses <a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.match_score" title="ssw.alignmentmgr.AlignmentMgr.match_score"><code class="xref py py-attr docutils literal notranslate"><span class="pre">match_score</span></code></a>: Match score</dt><dd><p><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.mismatch_penalty" title="ssw.alignmentmgr.AlignmentMgr.mismatch_penalty"><code class="xref py py-attr docutils literal notranslate"><span class="pre">mismatch_penalty</span></code></a>: Mismatch penalty
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">score_matrix</span></code>: Pointer to matrix to populate</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.match_score">
+<span class="sig-name descname"><span class="pre">match_score</span></span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.match_score" title="Permalink to this definition"></a></dt>
+<dd><p>0 to 255 value for scoring matches</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.mismatch_penalty">
+<span class="sig-name descname"><span class="pre">mismatch_penalty</span></span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.mismatch_penalty" title="Permalink to this definition"></a></dt>
+<dd><p>0 to 255 penalty value for scoring mismatches</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.printResult">
+<span class="sig-name descname"><span class="pre">printResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.printResult" title="Permalink to this definition"></a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.0.0.: </span>Choose <a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.print_result" title="ssw.alignmentmgr.AlignmentMgr.print_result"><code class="xref py py-meth docutils literal notranslate"><span class="pre">print_result()</span></code></a> method instead</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.print_result">
+<span class="sig-name descname"><span class="pre">print_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.print_result" title="Permalink to this definition"></a></dt>
+<dd><p>Rebuild an <code class="docutils literal notranslate"><span class="pre">s_align</span></code> struct from a result dictionary
+so as to be able to call ssw terminal print functions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>result</strong> (<a class="reference internal" href="alignment.html#ssw.alignment.Alignment" title="ssw.alignment.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Alignment</span></code></a>) – <a class="reference internal" href="alignment.html#ssw.alignment.Alignment" title="ssw.alignment.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">ssw.alignment.Alignment</span></code></a> containing the result from
+a call to <a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.align" title="ssw.alignmentmgr.AlignmentMgr.align"><code class="xref py py-meth docutils literal notranslate"><span class="pre">align()</span></code></a></p></li>
+<li><p><strong>start_idx</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – index to start printing from. defaults to 0</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>OSError</strong> – Memory allocation issue</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.setRead">
+<span class="sig-name descname"><span class="pre">setRead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.setRead" title="Permalink to this definition"></a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.0.0.: </span>Choose <a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.set_read" title="ssw.alignmentmgr.AlignmentMgr.set_read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_read()</span></code></a> method instead</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.setReference">
+<span class="sig-name descname"><span class="pre">setReference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.setReference" title="Permalink to this definition"></a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.0.0.: </span>Choose <a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.set_reference" title="ssw.alignmentmgr.AlignmentMgr.set_reference"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_reference()</span></code></a> method instead</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.set_read">
+<span class="sig-name descname"><span class="pre">set_read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.set_read" title="Permalink to this definition"></a></dt>
+<dd><p>Set the query read string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>read</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>]) – String-like (str or bytestring) that represents the read.
+Must be set for a call to <a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.align" title="ssw.alignmentmgr.AlignmentMgr.align"><code class="xref py py-meth docutils literal notranslate"><span class="pre">align()</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.set_reference">
+<span class="sig-name descname"><span class="pre">set_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.set_reference" title="Permalink to this definition"></a></dt>
+<dd><p>Set the query reference string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>reference</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>]) – String-like (str or bytestring) that represents the
+reference sequence. Must be set a call to <a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.align" title="ssw.alignmentmgr.AlignmentMgr.align"><code class="xref py py-meth docutils literal notranslate"><span class="pre">align()</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.force_align">
+<span class="sig-prename descclassname"><span class="pre">ssw.alignmentmgr.</span></span><span class="sig-name descname"><span class="pre">force_align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_overhang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aligner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ssw.alignmentmgr.force_align" title="Permalink to this definition"></a></dt>
+<dd><p>Enforces no gaps by raising the <code class="docutils literal notranslate"><span class="pre">gap_open</span></code> penalty</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>read</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>]) – Read sequence python string or bytes-string</p></li>
+<li><p><strong>reference</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>]) – Reference sequence python string or bytes-string</p></li>
+<li><p><strong>force_overhang</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Make sure only one end overhangs</p></li>
+<li><p><strong>aligner</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr" title="ssw.alignmentmgr.AlignmentMgr"><code class="xref py py-class docutils literal notranslate"><span class="pre">AlignmentMgr</span></code></a>]) – pass an existing <a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr" title="ssw.alignmentmgr.AlignmentMgr"><code class="xref py py-class docutils literal notranslate"><span class="pre">AlignmentMgr</span></code></a> object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="alignment.html#ssw.alignment.Alignment" title="ssw.alignment.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Alignment</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="alignment.html#ssw.alignment.Alignment" title="ssw.alignment.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">ssw.alignment.Alignment</span></code></a> result</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – No solution found</p></li>
+<li><p><strong>ValueError</strong> – Read does not align to one overhang</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.format_force_align">
+<span class="sig-prename descclassname"><span class="pre">ssw.alignmentmgr.</span></span><span class="sig-name descname"><span class="pre">format_force_align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alignment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_print</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ssw.alignmentmgr.format_force_align" title="Permalink to this definition"></a></dt>
+<dd><p>Does not truncate strings. Optionally prints these formatted strings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>read</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>]) – Read sequence python string or bytes-string</p></li>
+<li><p><strong>reference</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>]) – Reference sequence python string or bytes-string</p></li>
+<li><p><strong>alignment</strong> (<a class="reference internal" href="alignment.html#ssw.alignment.Alignment" title="ssw.alignment.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Alignment</span></code></a>) – <a class="reference internal" href="alignment.html#ssw.alignment.Alignment" title="ssw.alignment.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">ssw.alignment.Alignment</span></code></a> named tuple</p></li>
+<li><p><strong>do_print</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, print output</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(&lt;reference output&gt;, &lt;read output&gt;)</p>
+</dd>
+</dl>
+</dd></dl>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="API Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="alignment.html" class="btn btn-neutral float-right" title="ssw.alignment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Copyright 2023 Nick Conway; Copyright 2018, Nick Conway; Wyss InstituteHarvard University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+</body>
+</html>
