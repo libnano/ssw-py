@@ -172,6 +172,7 @@ setup(
     package_data={'ssw': SSWPY_FILES + SSWPY_TEST_FPS},
     description=ssw.DESCRIPTION,
     long_description=LONG_DESCRIPTION,
+    long_description_content_type='text/markdown',
     license=ssw.__license__,
     classifiers=CLASSIFIERS,
     setup_requires=['Cython', 'setuptools>=65.6.3'],
