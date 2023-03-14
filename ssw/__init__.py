@@ -35,7 +35,7 @@ __copyright__ = (
     'Harvard University'
 )
 __license__ = 'MIT'
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 DESCRIPTION = (
     'Python bindings for Complete-Striped-Smith-Waterman-Library '
     '(SSW) project'
