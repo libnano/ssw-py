@@ -4,13 +4,13 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ssw.alignmentmgr &mdash; ssw-py 1.0.0a2 documentation</title>
+  <title>ssw.alignmentmgr &mdash; ssw-py 1.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-
+  
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -18,23 +18,23 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ssw.alignment" href="alignment.html" />
-    <link rel="prev" title="API Documentation" href="index.html" />
+    <link rel="next" title="ssw.alignmenttuple" href="alignmenttuple.html" />
+    <link rel="prev" title="API Documentation" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
 
-
-
+          
+          
           <a href="../index.html" class="icon icon-home">
             ssw-py
           </a>
               <div class="version">
-                1.0.0a2
+                1.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -49,10 +49,14 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">API Documentation</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ssw.alignmentmgr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.align"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.align()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.build_dna_score_matrix"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.build_dna_score_matrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.read"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.read</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.reference"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.reference</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.match_score"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.match_score</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.mismatch_penalty"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.mismatch_penalty</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.align"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.align()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.build_dna_score_matrix"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.build_dna_score_matrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.match_score</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.mismatch_penalty</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.printResult"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.printResult()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.print_result"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.print_result()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.setRead"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.setRead()</span></code></a></li>
@@ -61,10 +65,18 @@
 <li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.set_reference"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.set_reference()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#ssw.alignmentmgr.BitwiseAlignmentFlag"><code class="docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.BitwiseAlignmentFlag.best_idxs_no_cigar"><code class="docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag.best_idxs_no_cigar</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.BitwiseAlignmentFlag.distance_filter"><code class="docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag.distance_filter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.BitwiseAlignmentFlag.score_filter"><code class="docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag.score_filter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.BitwiseAlignmentFlag.best_idxs"><code class="docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag.best_idxs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssw.alignmentmgr.BitwiseAlignmentFlag.end_idxs_only_no_cigar"><code class="docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag.end_idxs_only_no_cigar</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#ssw.alignmentmgr.force_align"><code class="docutils literal notranslate"><span class="pre">force_align()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ssw.alignmentmgr.format_force_align"><code class="docutils literal notranslate"><span class="pre">format_force_align()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="alignment.html">ssw.alignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="alignment.html#ssw.alignment.Alignment"><code class="docutils literal notranslate"><span class="pre">Alignment</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmenttuple.html">ssw.alignmenttuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment"><code class="docutils literal notranslate"><span class="pre">Alignment</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="printer.html">ssw.printer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="printer.html#ssw.printer.printer"><code class="docutils literal notranslate"><span class="pre">printer()</span></code></a></li>
 </ul>
@@ -96,7 +108,7 @@
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-
+             
   <span class="target" id="module-ssw.alignmentmgr"></span><section id="ssw-alignmentmgr">
 <h1>ssw.alignmentmgr<a class="headerlink" href="#ssw-alignmentmgr" title="Permalink to this heading"></a></h1>
 <p>Alignment Manager Cython wrapper for ssw library code.</p>
@@ -110,9 +122,33 @@ to understand Smith-Waterman scoring</p>
 <dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ssw.alignmentmgr.</span></span><span class="sig-name descname"><span class="pre">AlignmentMgr</span></span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr" title="Permalink to this definition"></a></dt>
 <dd><p>Class to manage SSW-based alignment</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.read">
+<span class="sig-name descname"><span class="pre">read</span></span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.read" title="Permalink to this definition"></a></dt>
+<dd><p>Read sequence python string or bytes-string</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.reference">
+<span class="sig-name descname"><span class="pre">reference</span></span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.reference" title="Permalink to this definition"></a></dt>
+<dd><p>Reference sequence python string or bytes-string</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.match_score">
+<span class="sig-name descname"><span class="pre">match_score</span></span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.match_score" title="Permalink to this definition"></a></dt>
+<dd><p>0 to 255 value for scoring matches</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.mismatch_penalty">
+<span class="sig-name descname"><span class="pre">mismatch_penalty</span></span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.mismatch_penalty" title="Permalink to this definition"></a></dt>
+<dd><p>0 to 255 value penalty for mismatches</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.align">
-<span class="sig-name descname"><span class="pre">align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gap_open</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gap_extension</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.align" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gap_open</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gap_extension</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bitwise_flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_cutoff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_cutoff</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.align" title="Permalink to this definition"></a></dt>
 <dd><p>Align a read to the reference with optional index offseting</p>
 <p>Returns a dictionary no matter what as <cite>align_c</cite> can’t return <code class="docutils literal notranslate"><span class="pre">NULL</span></code></p>
 <dl class="field-list simple">
@@ -123,22 +159,20 @@ to understand Smith-Waterman scoring</p>
 <li><p><strong>start_idx</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Index to start search. Default 0</p></li>
 <li><p><strong>end_idx</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Index to end search (trying to avoid a
 target region). Default 0 means use whole reference length</p></li>
+<li><p><strong>bitwise_flag</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Flag using a member of <a class="reference internal" href="#ssw.alignmentmgr.BitwiseAlignmentFlag" title="ssw.alignmentmgr.BitwiseAlignmentFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag</span></code></a></p></li>
+<li><p><strong>distance_cutoff</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Filter by index start to end distances less than
+this value.  see <a class="reference internal" href="#ssw.alignmentmgr.BitwiseAlignmentFlag" title="ssw.alignmentmgr.BitwiseAlignmentFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag</span></code></a> docs for details
+<code class="docutils literal notranslate"><span class="pre">bitwise_flag=BitwiseAlignmentFlag.distance_filter</span></code></p></li>
+<li><p><strong>score_cutoff</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Filter by fits with a score greater score value cutoff
+see <a class="reference internal" href="#ssw.alignmentmgr.BitwiseAlignmentFlag" title="ssw.alignmentmgr.BitwiseAlignmentFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag</span></code></a> docs for details
+<code class="docutils literal notranslate"><span class="pre">bitwise_flag=BitwiseAlignmentFlag.score_filter</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="alignment.html#ssw.alignment.Alignment" title="ssw.alignment.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Alignment</span></code></a></p>
+<dd class="field-even"><p><a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment" title="ssw.alignmenttuple.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Alignment</span></code></a></p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><dl class="simple">
-<dt>Alignment with keys <code class="docutils literal notranslate"><span class="pre">CIGAR</span></code>           &lt;for depicting alignment&gt;</dt><dd><p><code class="docutils literal notranslate"><span class="pre">optimal_score</span></code>
-<code class="docutils literal notranslate"><span class="pre">sub-optimal_score</span></code>
-<code class="docutils literal notranslate"><span class="pre">reference_start</span></code> &lt;index into reference&gt;
-<code class="docutils literal notranslate"><span class="pre">reference_end</span></code>   &lt;index into reference&gt;
-<code class="docutils literal notranslate"><span class="pre">read_start`</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&lt;index</span> <span class="pre">into</span> <span class="pre">read&gt;</span>
-<span class="pre">``read_end</span></code>        &lt;index into read&gt;</p>
-</dd>
-</dl>
-</p>
+<dd class="field-odd"><p><a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment" title="ssw.alignmenttuple.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">ssw.alignmenttuple.Alignment</span></code></a> instance</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
@@ -173,21 +207,22 @@ target region). Default 0 means use whole reference length</p></li>
 <p>Hard coded to a 5 x 5 matrix so this should not be called externally
 as of now</p>
 <dl class="simple">
-<dt>Uses <a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.match_score" title="ssw.alignmentmgr.AlignmentMgr.match_score"><code class="xref py py-attr docutils literal notranslate"><span class="pre">match_score</span></code></a>: Match score</dt><dd><p><a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.mismatch_penalty" title="ssw.alignmentmgr.AlignmentMgr.mismatch_penalty"><code class="xref py py-attr docutils literal notranslate"><span class="pre">mismatch_penalty</span></code></a>: Mismatch penalty
+<dt>Uses:</dt><dd><p><a class="reference internal" href="#id0" title="ssw.alignmentmgr.AlignmentMgr.match_score"><code class="xref py py-attr docutils literal notranslate"><span class="pre">match_score</span></code></a>: Match score
+<a class="reference internal" href="#id1" title="ssw.alignmentmgr.AlignmentMgr.mismatch_penalty"><code class="xref py py-attr docutils literal notranslate"><span class="pre">mismatch_penalty</span></code></a>: Mismatch penalty
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">score_matrix</span></code>: Pointer to matrix to populate</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.match_score">
-<span class="sig-name descname"><span class="pre">match_score</span></span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.match_score" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">match_score</span></span><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
 <dd><p>0 to 255 value for scoring matches</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="ssw.alignmentmgr.AlignmentMgr.mismatch_penalty">
-<span class="sig-name descname"><span class="pre">mismatch_penalty</span></span><a class="headerlink" href="#ssw.alignmentmgr.AlignmentMgr.mismatch_penalty" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">mismatch_penalty</span></span><a class="headerlink" href="#id1" title="Permalink to this definition"></a></dt>
 <dd><p>0 to 255 penalty value for scoring mismatches</p>
 </dd></dl>
 
@@ -207,7 +242,7 @@ so as to be able to call ssw terminal print functions</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>result</strong> (<a class="reference internal" href="alignment.html#ssw.alignment.Alignment" title="ssw.alignment.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Alignment</span></code></a>) – <a class="reference internal" href="alignment.html#ssw.alignment.Alignment" title="ssw.alignment.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">ssw.alignment.Alignment</span></code></a> containing the result from
+<li><p><strong>result</strong> (<a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment" title="ssw.alignmenttuple.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Alignment</span></code></a>) – <a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment" title="ssw.alignmenttuple.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">ssw.alignmenttuple.Alignment</span></code></a> containing the result from
 a call to <a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.align" title="ssw.alignmentmgr.AlignmentMgr.align"><code class="xref py py-meth docutils literal notranslate"><span class="pre">align()</span></code></a></p></li>
 <li><p><strong>start_idx</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – index to start printing from. defaults to 0</p></li>
 </ul>
@@ -260,6 +295,61 @@ reference sequence. Must be set a call to <a class="reference internal" href="#s
 
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.BitwiseAlignmentFlag">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ssw.alignmentmgr.</span></span><span class="sig-name descname"><span class="pre">BitwiseAlignmentFlag</span></span><a class="headerlink" href="#ssw.alignmentmgr.BitwiseAlignmentFlag" title="Permalink to this definition"></a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">bitwise_flag</span></code> (from high- to low-bit) for <a class="reference internal" href="#ssw.alignmentmgr.AlignmentMgr.align" title="ssw.alignmentmgr.AlignmentMgr.align"><code class="xref py py-meth docutils literal notranslate"><span class="pre">AlignmentMgr.align()</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.BitwiseAlignmentFlag.best_idxs_no_cigar">
+<span class="sig-name descname"><span class="pre">best_idxs_no_cigar</span></span><a class="headerlink" href="#ssw.alignmentmgr.BitwiseAlignmentFlag.best_idxs_no_cigar" title="Permalink to this definition"></a></dt>
+<dd><p>Bit 5. When set as 1, <code class="docutils literal notranslate"><span class="pre">ssw_align</span></code> will return
+the best alignment beginning position;
+NOTE: this is setting <code class="docutils literal notranslate"><span class="pre">bitwise_flag</span> <span class="pre">==</span> <span class="pre">8</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.BitwiseAlignmentFlag.distance_filter">
+<span class="sig-name descname"><span class="pre">distance_filter</span></span><a class="headerlink" href="#ssw.alignmentmgr.BitwiseAlignmentFlag.distance_filter" title="Permalink to this definition"></a></dt>
+<dd><p>Bit 6.  When set as 1:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span>
+    <span class="p">((</span><span class="n">reference_end</span> <span class="o">-</span> <span class="n">reference_start</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">distance_filter</span><span class="p">)</span> <span class="ow">and</span>
+    <span class="p">((</span><span class="n">read_end</span> <span class="o">-</span> <span class="n">read_start</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">distance_filter</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>(whatever bit 5 is set) the function will return the best
+alignment beginning position and cigar;
+NOTE: this is setting <code class="docutils literal notranslate"><span class="pre">bitwise_flag</span> <span class="pre">==</span> <span class="pre">4</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.BitwiseAlignmentFlag.score_filter">
+<span class="sig-name descname"><span class="pre">score_filter</span></span><a class="headerlink" href="#ssw.alignmentmgr.BitwiseAlignmentFlag.score_filter" title="Permalink to this definition"></a></dt>
+<dd><p>Bit 7. When set as 1, if the best
+<code class="docutils literal notranslate"><span class="pre">alignment_score</span> <span class="pre">&gt;=</span> <span class="pre">score_filter</span></code>, (whatever bit 5 is set as) the
+function  will return the best alignment beginning position and
+cigar; NOTE: this is setting <code class="docutils literal notranslate"><span class="pre">bitwise_flag</span> <span class="pre">==</span> <span class="pre">2</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.BitwiseAlignmentFlag.best_idxs">
+<span class="sig-name descname"><span class="pre">best_idxs</span></span><a class="headerlink" href="#ssw.alignmentmgr.BitwiseAlignmentFlag.best_idxs" title="Permalink to this definition"></a></dt>
+<dd><p>Bit 8. When set as 1, (whatever bit 5, 6 or 7 are set as) the
+function will always return the best alignment beginning position
+and cigar.
+NOTE: this is setting <code class="docutils literal notranslate"><span class="pre">bitwise_flag</span> <span class="pre">=</span> <span class="pre">1</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ssw.alignmentmgr.BitwiseAlignmentFlag.end_idxs_only_no_cigar">
+<span class="sig-name descname"><span class="pre">end_idxs_only_no_cigar</span></span><a class="headerlink" href="#ssw.alignmentmgr.BitwiseAlignmentFlag.end_idxs_only_no_cigar" title="Permalink to this definition"></a></dt>
+<dd><p>When <code class="docutils literal notranslate"><span class="pre">bitwise_flag</span> <span class="pre">==</span> <span class="pre">0</span></code>, only the optimal
+and sub-optimal scores and the optimal alignment ending position
+will be returned.</p>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="ssw.alignmentmgr.force_align">
 <span class="sig-prename descclassname"><span class="pre">ssw.alignmentmgr.</span></span><span class="sig-name descname"><span class="pre">force_align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_overhang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aligner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ssw.alignmentmgr.force_align" title="Permalink to this definition"></a></dt>
@@ -274,10 +364,10 @@ reference sequence. Must be set a call to <a class="reference internal" href="#s
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="alignment.html#ssw.alignment.Alignment" title="ssw.alignment.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Alignment</span></code></a></p>
+<dd class="field-even"><p><a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment" title="ssw.alignmenttuple.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Alignment</span></code></a></p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="alignment.html#ssw.alignment.Alignment" title="ssw.alignment.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">ssw.alignment.Alignment</span></code></a> result</p>
+<dd class="field-odd"><p><a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment" title="ssw.alignmenttuple.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">ssw.alignmenttuple.Alignment</span></code></a> result</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
@@ -297,7 +387,7 @@ reference sequence. Must be set a call to <a class="reference internal" href="#s
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>read</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>]) – Read sequence python string or bytes-string</p></li>
 <li><p><strong>reference</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>]) – Reference sequence python string or bytes-string</p></li>
-<li><p><strong>alignment</strong> (<a class="reference internal" href="alignment.html#ssw.alignment.Alignment" title="ssw.alignment.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Alignment</span></code></a>) – <a class="reference internal" href="alignment.html#ssw.alignment.Alignment" title="ssw.alignment.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">ssw.alignment.Alignment</span></code></a> named tuple</p></li>
+<li><p><strong>alignment</strong> (<a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment" title="ssw.alignmenttuple.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Alignment</span></code></a>) – <a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment" title="ssw.alignmenttuple.Alignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">ssw.alignmenttuple.Alignment</span></code></a> named tuple</p></li>
 <li><p><strong>do_print</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, print output</p></li>
 </ul>
 </dd>
@@ -316,7 +406,7 @@ reference sequence. Must be set a call to <a class="reference internal" href="#s
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="API Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="alignment.html" class="btn btn-neutral float-right" title="ssw.alignment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="alignmenttuple.html" class="btn btn-neutral float-right" title="ssw.alignmenttuple" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -328,7 +418,7 @@ reference sequence. Must be set a call to <a class="reference internal" href="#s
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
-
+   
 
 </footer>
         </div>
@@ -339,7 +429,7 @@ reference sequence. Must be set a call to <a class="reference internal" href="#s
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
+  </script> 
 
 </body>
 </html>

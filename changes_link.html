@@ -4,13 +4,13 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Changelog &mdash; ssw-py 1.0.0a2 documentation</title>
+  <title>Changelog &mdash; ssw-py 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-
+  
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
@@ -18,22 +18,22 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="ssw.printer" href="api/printer.html" />
+    <link rel="prev" title="ssw.printer" href="api/printer.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
 
-
-
+          
+          
           <a href="index.html" class="icon icon-home">
             ssw-py
           </a>
               <div class="version">
-                1.0.0a2
+                1.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -47,7 +47,7 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/index.html">API Documentation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#version-1-0-0-march-11-2023">Version 1.0.0 (March 11, 2023)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-1-0-0-march-13-2023">Version 1.0.0 (March 13, 2023)</a></li>
 </ul>
 </li>
 </ul>
@@ -75,30 +75,39 @@
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-
+             
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading"></a></h1>
-<section id="version-1-0-0-march-11-2023">
-<h2>Version 1.0.0 (March 11, 2023)<a class="headerlink" href="#version-1-0-0-march-11-2023" title="Permalink to this heading"></a></h2>
+<section id="version-1-0-0-march-13-2023">
+<h2>Version 1.0.0 (March 13, 2023)<a class="headerlink" href="#version-1-0-0-march-13-2023" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Support for Python 3.8 through 3.11</p></li>
 <li><p><a class="reference external" href="https://pre-commit.com">pre-commit</a> added to repo and code sanitized</p></li>
 <li><p>GitHub Action automated testing with <code class="docutils literal notranslate"><span class="pre">pytest</span></code></p></li>
 <li><p>GitHub Action based wheel for PyPi support following the CPython EOL model. See https://devguide.python.org/versions/</p></li>
-<li><p>documentation added using <a class="reference external" href="https://www.sphinx-doc.org/en/master/index.html">Sphinx</a> and <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/">MyST</a> Markdown</p></li>
-<li><p>Documentation build on version tag using GitHub action in <code class="docutils literal notranslate"><span class="pre">update-docs.yml</span></code></p></li>
+<li><p>Documentation added using <a class="reference external" href="https://www.sphinx-doc.org/en/master/index.html">Sphinx</a> and <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/">MyST</a> Markdown</p></li>
+<li><p>Documentation updates for missing example content and style.</p></li>
+<li><p>Documentation build on version tag using GitHub Action workflow in <code class="docutils literal notranslate"><span class="pre">update-docs.yml</span></code></p></li>
 <li><p>docstrings updated</p></li>
 <li><p>Updated <code class="docutils literal notranslate"><span class="pre">LICENSE.md</span></code> copyright for 2023</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code> updated to add information regarding <code class="docutils literal notranslate"><span class="pre">sse2neon.h</span></code> macro for arm64 support</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">sse2neon.h</span></code> macro for arm64 support</p></li>
 <li><p>Project url updated in <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>.</p></li>
 <li><p>Made paths platform independent in <code class="docutils literal notranslate"><span class="pre">setup.py</span></code></p></li>
 <li><p>removed SSW Library java and demo data files for clarity since they are unused. Updated <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> to remove java build</p></li>
 <li><p>Code updated with warnings for deprecated camelCase methods for snake_case migration.</p></li>
 <li><p>Test coverage added for deprecation warnings</p></li>
 <li><p>Tests updated to check <code class="docutils literal notranslate"><span class="pre">Alignment</span></code> named tuples</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ssw-py-ci-github-action.yml</span></code> github action workflow added</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ssw-py-ci-github-action.yml</span></code> github action workflow added for automated CI</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sswpy.pyx</span></code> renamed to <code class="docutils literal notranslate"><span class="pre">alignmentmgr.pyx</span></code> and <code class="docutils literal notranslate"><span class="pre">SSW</span></code> class is now <code class="docutils literal notranslate"><span class="pre">AlignmentMgr</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alignmenttuple.py</span></code> module for result tuple datastructure added</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ssw/__init__.py</span></code> aliases <code class="docutils literal notranslate"><span class="pre">AlignmentMgr</span></code> to <code class="docutils literal notranslate"><span class="pre">SSW</span></code> for deprecated support</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.github/workflows/build-wheels-pypi.yml</span></code> added</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code> updated for completion including badges</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag</span></code> class and <code class="docutils literal notranslate"><span class="pre">bitwise_flag</span></code>, <code class="docutils literal notranslate"><span class="pre">distance_cutoff</span></code>, and <code class="docutils literal notranslate"><span class="pre">score_cutoff</span></code> arguments to <code class="docutils literal notranslate"><span class="pre">AlignmentMgr.align</span></code> to enable more SSW upstream features.</p></li>
+<li><p>Updated <code class="docutils literal notranslate"><span class="pre">test_ssw.py</span></code> to test <code class="docutils literal notranslate"><span class="pre">bitwise_flag</span></code> and <code class="docutils literal notranslate"><span class="pre">score_filter</span></code> and <code class="docutils literal notranslate"><span class="pre">distance_filter</span></code></p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">MANIFEST.in</span></code> and <code class="docutils literal notranslate"><span class="pre">setup.package_data</span></code> updated for completion.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ssw.alignmentmgr.AlignmentMgr.align_c</span></code> runs <code class="docutils literal notranslate"><span class="pre">nogil</span></code> now.</p></li>
+<li><p>PyPI builds using <code class="docutils literal notranslate"><span class="pre">build-wheels-pypi.yml</span></code> GitHub Action workflow on version tag</p></li>
 </ul>
 </section>
 </section>
@@ -119,7 +128,7 @@
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
-
+   
 
 </footer>
         </div>
@@ -130,7 +139,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
+  </script> 
 
 </body>
 </html>

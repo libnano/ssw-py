@@ -4,13 +4,13 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>API Documentation &mdash; ssw-py 1.0.0a2 documentation</title>
+  <title>API Documentation &mdash; ssw-py 1.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-
+  
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -19,22 +19,22 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="ssw.alignmentmgr" href="alignmentmgr.html" />
-    <link rel="prev" title="Getting Started" href="../quickstart.html" />
+    <link rel="prev" title="Getting Started" href="../quickstart.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
 
-
-
+          
+          
           <a href="../index.html" class="icon icon-home">
             ssw-py
           </a>
               <div class="version">
-                1.0.0a2
+                1.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -49,10 +49,11 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html">ssw.alignmentmgr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.AlignmentMgr"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.BitwiseAlignmentFlag"><code class="docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.force_align"><code class="docutils literal notranslate"><span class="pre">force_align()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.format_force_align"><code class="docutils literal notranslate"><span class="pre">format_force_align()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="alignment.html">ssw.alignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="alignment.html#ssw.alignment.Alignment"><code class="docutils literal notranslate"><span class="pre">Alignment</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmenttuple.html">ssw.alignmenttuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment"><code class="docutils literal notranslate"><span class="pre">Alignment</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="printer.html">ssw.printer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="printer.html#ssw.printer.printer"><code class="docutils literal notranslate"><span class="pre">printer()</span></code></a></li>
 </ul>
@@ -83,7 +84,7 @@
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-
+             
   <section id="api-documentation">
 <h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this heading"></a></h1>
 <p>This includes a thorough documentation of all pertinent modules, functions,
@@ -92,10 +93,14 @@ and classes contained within <strong>ssw-py</strong>.</p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="alignmentmgr.html">ssw.alignmentmgr</a></li>
 <li class="toctree-l1"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.AlignmentMgr"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.AlignmentMgr.align"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.align()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.AlignmentMgr.build_dna_score_matrix"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.build_dna_score_matrix()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.AlignmentMgr.read"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.read</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.AlignmentMgr.reference"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.reference</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.AlignmentMgr.match_score"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.match_score</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.AlignmentMgr.mismatch_penalty"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.mismatch_penalty</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.AlignmentMgr.align"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.align()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.AlignmentMgr.build_dna_score_matrix"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.build_dna_score_matrix()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#id0"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.match_score</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#id1"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.mismatch_penalty</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.AlignmentMgr.printResult"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.printResult()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.AlignmentMgr.print_result"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.print_result()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.AlignmentMgr.setRead"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.setRead()</span></code></a></li>
@@ -104,18 +109,26 @@ and classes contained within <strong>ssw-py</strong>.</p>
 <li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.AlignmentMgr.set_reference"><code class="docutils literal notranslate"><span class="pre">AlignmentMgr.set_reference()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.BitwiseAlignmentFlag"><code class="docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.BitwiseAlignmentFlag.best_idxs_no_cigar"><code class="docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag.best_idxs_no_cigar</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.BitwiseAlignmentFlag.distance_filter"><code class="docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag.distance_filter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.BitwiseAlignmentFlag.score_filter"><code class="docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag.score_filter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.BitwiseAlignmentFlag.best_idxs"><code class="docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag.best_idxs</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.BitwiseAlignmentFlag.end_idxs_only_no_cigar"><code class="docutils literal notranslate"><span class="pre">BitwiseAlignmentFlag.end_idxs_only_no_cigar</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.force_align"><code class="docutils literal notranslate"><span class="pre">force_align()</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="alignmentmgr.html#ssw.alignmentmgr.format_force_align"><code class="docutils literal notranslate"><span class="pre">format_force_align()</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="alignment.html">ssw.alignment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="alignment.html#ssw.alignment.Alignment"><code class="docutils literal notranslate"><span class="pre">Alignment</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="alignment.html#ssw.alignment.Alignment.CIGAR"><code class="docutils literal notranslate"><span class="pre">Alignment.CIGAR</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="alignment.html#ssw.alignment.Alignment.cigar_pair_list"><code class="docutils literal notranslate"><span class="pre">Alignment.cigar_pair_list</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="alignment.html#ssw.alignment.Alignment.optimal_score"><code class="docutils literal notranslate"><span class="pre">Alignment.optimal_score</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="alignment.html#ssw.alignment.Alignment.sub_optimal_score"><code class="docutils literal notranslate"><span class="pre">Alignment.sub_optimal_score</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="alignment.html#ssw.alignment.Alignment.reference_start"><code class="docutils literal notranslate"><span class="pre">Alignment.reference_start</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="alignment.html#ssw.alignment.Alignment.reference_end"><code class="docutils literal notranslate"><span class="pre">Alignment.reference_end</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="alignment.html#ssw.alignment.Alignment.read_start"><code class="docutils literal notranslate"><span class="pre">Alignment.read_start</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="alignment.html#ssw.alignment.Alignment.read_end"><code class="docutils literal notranslate"><span class="pre">Alignment.read_end</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="alignmenttuple.html">ssw.alignmenttuple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment"><code class="docutils literal notranslate"><span class="pre">Alignment</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment.CIGAR"><code class="docutils literal notranslate"><span class="pre">Alignment.CIGAR</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment.optimal_score"><code class="docutils literal notranslate"><span class="pre">Alignment.optimal_score</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment.sub_optimal_score"><code class="docutils literal notranslate"><span class="pre">Alignment.sub_optimal_score</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment.reference_start"><code class="docutils literal notranslate"><span class="pre">Alignment.reference_start</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment.reference_end"><code class="docutils literal notranslate"><span class="pre">Alignment.reference_end</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment.read_start"><code class="docutils literal notranslate"><span class="pre">Alignment.read_start</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment.read_end"><code class="docutils literal notranslate"><span class="pre">Alignment.read_end</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="alignmenttuple.html#ssw.alignmenttuple.Alignment.cigar_pair_list"><code class="docutils literal notranslate"><span class="pre">Alignment.cigar_pair_list</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="printer.html">ssw.printer</a></li>
@@ -141,7 +154,7 @@ and classes contained within <strong>ssw-py</strong>.</p>
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
-
+   
 
 </footer>
         </div>
@@ -152,7 +165,7 @@ and classes contained within <strong>ssw-py</strong>.</p>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
+  </script> 
 
 </body>
 </html>

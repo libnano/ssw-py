@@ -4,13 +4,13 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Getting Started &mdash; ssw-py 1.0.0a2 documentation</title>
+  <title>Getting Started &mdash; ssw-py 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-
+  
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
@@ -19,22 +19,22 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="API Documentation" href="api/index.html" />
-    <link rel="prev" title="ssw-py documentation" href="index.html" />
+    <link rel="prev" title="ssw-py documentation" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
 
-
-
+          
+          
           <a href="index.html" class="icon icon-home">
             ssw-py
           </a>
               <div class="version">
-                1.0.0a2
+                1.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -91,7 +91,7 @@
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-
+             
   <section id="getting-started">
 <h1><a class="toc-backref" href="#id1" role="doc-backlink">Getting Started</a><a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h1>
 <p><strong>ssw-py</strong> is designed to be simple to install and use.</p>
@@ -124,7 +124,7 @@
 </nav>
 <section id="motivation">
 <h2><a class="toc-backref" href="#id2" role="doc-backlink">Motivation</a><a class="headerlink" href="#motivation" title="Permalink to this heading"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">ssw-py</span></code> exists to help oligo alignment in python.  The upstream <a class="reference external" href="https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library">SSW Library</a> is quality cross-platform solution to use as the foundation of this tool.</p>
+<p><strong>ssw-py</strong> exists to help oligo alignment in python.  The upstream <a class="reference external" href="https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library">SSW Library</a> is quality cross-platform solution to use as the foundation of this tool.</p>
 </section>
 <section id="requirements">
 <h2><a class="toc-backref" href="#id3" role="doc-backlink">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
@@ -143,14 +143,44 @@ install it using <code class="docutils literal notranslate"><span class="pre">pi
 </section>
 <section id="alignment">
 <h2><a class="toc-backref" href="#id5" role="doc-backlink">Alignment</a><a class="headerlink" href="#alignment" title="Permalink to this heading"></a></h2>
-<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">ssw</span></code> module includes support for</p>
+<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">ssw</span></code> module includes support for doing alignments of a “read”
+sequence to a “reference” sequence.  Users can choose to make these two values
+Python strings or Python bytes-strings as the <a class="reference internal" href="api/alignmentmgr.html#ssw.alignmentmgr.AlignmentMgr" title="ssw.alignmentmgr.AlignmentMgr"><code class="xref py py-class docutils literal notranslate"><span class="pre">ssw.alignmentmgr.AlignmentMgr</span></code></a> supports
+both data types for its class attributes and methods.</p>
 <section id="workflow">
 <h3><a class="toc-backref" href="#id6" role="doc-backlink">Workflow</a><a class="headerlink" href="#workflow" title="Permalink to this heading"></a></h3>
-<p>The easiest way to run the code is
-Example usage:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<p>The easiest way to run the code is below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ssw</span> <span class="kn">import</span> <span class="n">AlignmentMgr</span>
+
+<span class="c1"># Reference sequence</span>
+<span class="n">ref_seq</span> <span class="o">=</span> <span class="s1">&#39;CAGCCTTTCTGACCCGGAAATCAAAATAGGCACAACAAA&#39;</span>
+<span class="c1"># Read sequence</span>
+<span class="n">read_seq</span> <span class="o">=</span> <span class="s1">&#39;CTGAGCCGGTAAATC&#39;</span>
+
+<span class="c1"># Set the AlignmentMgr instance to run one or</span>
+<span class="c1"># more alignment computations with by specifying a match score or</span>
+<span class="n">align_mgr</span> <span class="o">=</span> <span class="n">AlignmentMgr</span><span class="p">(</span>
+    <span class="n">match_score</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">mismatch_penalty</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">align_mgr</span><span class="o">.</span><span class="n">set_read</span><span class="p">(</span><span class="n">read_seq</span><span class="p">)</span>
+<span class="n">align_mgr</span><span class="o">.</span><span class="n">set_reference</span><span class="p">(</span><span class="n">ref_seq</span><span class="p">)</span>
+
+<span class="c1"># Compute the alignment</span>
+<span class="n">alignment</span> <span class="o">=</span> <span class="n">align_mgr</span><span class="o">.</span><span class="n">align</span><span class="p">(</span>
+    <span class="n">gap_open</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">gap_extension</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Print the Alignment tuple</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alignment</span><span class="p">)</span>
+
+<span class="c1"># Print a formated result</span>
+<span class="n">align_mgr</span><span class="o">.</span><span class="n">print_result</span><span class="p">(</span><span class="n">alignment</span><span class="p">)</span>
+
 </pre></div>
 </div>
+<p>For more detailed exampls refer to <a class="reference external" href="https://github.com/libnano/ssw-py/blob/1.0.0-staging/example/blast.py">examples/blast.py</a> and <a class="reference external" href="https://github.com/libnano/ssw-py/blob/1.0.0-staging/tests/test_ssw.py">test/test_ssw.py</a></p>
 </section>
 </section>
 <section id="advanced-installation">
@@ -204,7 +234,7 @@ $ pytest
 <p>Contributions that improve the stability, compatibility or test coverage are
 best way to interface with the project and dev team.  Feature requests via
 GitHub issues are also welcome.</p>
-<p>Contact the <code class="docutils literal notranslate"><span class="pre">ssw-py</span></code> maintainers prior to beginning your work to make sure
+<p>Contact the <strong>ssw-py</strong> maintainers prior to beginning your work to make sure
 it makes sense for the project.</p>
 <p>By contributing, you also agree to release your code under the MIT License</p>
 <p>After a successful PR will be listed under the <a class="reference external" href="https://github.com/libnano/ssw-py/graphs/contributors">contributors</a>.</p>
@@ -285,7 +315,7 @@ modify the collective commit messages to update poor commit messages.</p>
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
-
+   
 
 </footer>
         </div>
@@ -296,7 +326,7 @@ modify the collective commit messages to update poor commit messages.</p>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
+  </script> 
 
 </body>
 </html>
