@@ -1,8 +1,9 @@
-## Cython Wrapper and modifications to original source
+## ssw-py Cython wrapper and modifications to original source
+
+Copyright (C) 2017 Wyss Institute at Harvard University
+Copyright (C) 2023 Nick Conway
 
 The MIT License
-
-Copyright (c) 2017 Wyss Institute at Harvard University
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

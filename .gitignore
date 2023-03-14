@@ -1,8 +1,18 @@
 .DS_Store
 *.pyc
 *.so
-sswpy.c
+alignmentmgr.c
 .cache/
 build/
 dist/
 *.pyd
+
+.vscode/
+.eggs/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+
+# Docs artifacts
+_build/
+docs/_build/
