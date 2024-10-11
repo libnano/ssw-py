@@ -107,6 +107,7 @@ from typing import (
     Tuple,
     Union,
 )
+import re
 
 from .alignmenttuple import Alignment
 
@@ -379,13 +380,14 @@ cdef class AlignmentMgr:
                 if cigar_array == NULL:
                     raise OSError('Memory allocation issue')
                 j = 0
-                for i in range(0, len(cigar), 2):
-                    length = int(cigar[i])
-                    letter = ord(cigar[i+1])
+                cigar_tuples = re.findall(r"(\d+)([A-Za-z])", cigar)
+                for cigar_tuple in cigar_tuples:
+                    length = int(cigar_tuple[0])
+                    letter = ord(cigar_tuple[1])
                     cigar_array[j] = to_cigar_int(length, letter)
                     j += 1
                 res_align.cigar = cigar_array
-                res_align.cigarLen = len(cigar)//2
+                res_align.cigarLen = len(cigar_tuples)
             else:
                 res_align.cigar = NULL
 
